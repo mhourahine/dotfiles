@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME=robbyrussell
 #ZSH_THEME="agnoster"
 
 # Example aliases
@@ -55,7 +55,6 @@ alias ls="ls -F"
 alias du="du -h"
 alias df="df -h"
 alias mongod="mongod run --config /usr/local/etc/mongod.conf"
-
 
 bindkey "^[^[[D" backward-word 
 bindkey "^[^[[C" forward-word
