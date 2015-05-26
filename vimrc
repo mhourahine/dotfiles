@@ -8,4 +8,6 @@ map <C-d> :NERDTreeToggle<CR>
 map <C-f> :Ack 
 set tabstop=2
 set guifont=Menlo:h15
+set hlsearch
+set laststatus=2
 colorscheme desert
