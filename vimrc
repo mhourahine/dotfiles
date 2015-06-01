@@ -10,4 +10,5 @@ set tabstop=2
 set guifont=Menlo:h15
 set hlsearch
 set laststatus=2
+set visualbell
 colorscheme desert
