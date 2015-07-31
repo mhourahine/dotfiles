@@ -6,6 +6,7 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2
 
 map <C-d> :NERDTreeToggle<CR>
 map <C-f> :Ack<CR> 
+map ;g :b#<CR>
 map ;f :bnext<CR>
 map ;b :bprevious<CR>
 
