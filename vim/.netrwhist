@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/mhourahine/.vim/bundle/ack.vim'
 let g:netrw_dirhist_2='/Users/mike/tgs_dev/utilitybelt'
 let g:netrw_dirhist_3='/Users/mike/dotfiles/vim/bundle'
 let g:netrw_dirhist_4='/Users/mhourahine/tgs_dev/apply'
 let g:netrw_dirhist_5='/Users/mhourahine/.vim'
 let g:netrw_dirhist_6='/Users/mhourahine/scratch_dev/leap'
+let g:netrw_dirhist_7='/Users/mhourahine/tgs_dev/utilitybelt'
