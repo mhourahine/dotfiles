@@ -4,6 +4,7 @@ filetype plugin indent on
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType scss setlocal shiftwidth=2 tabstop=2
 
 map <C-d> :NERDTreeToggle<CR>
 map <C-f> :Ack<CR> 
