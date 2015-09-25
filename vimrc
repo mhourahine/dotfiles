@@ -14,6 +14,7 @@ map ;b :bprevious<CR>
 map ;t :ls<CR>:b<SPACE>
 map ;q :b#<bar>:bd#<CR>
 
+set shiftwidth=2
 set tabstop=2
 set guifont=Menlo:h15
 set hlsearch
