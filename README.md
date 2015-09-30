@@ -15,4 +15,23 @@ When you clone this repo, use the following to include all submodules in the vim
 
 `git clone --recursive url_of_this_repo`
 
+## VIM plugins
 
+Here are the VIM plugins that are currently included and why I use them:
+
+- ack.vim - for fast project-wide searching
+- vim-addon-mw-utils - required by other plugins
+- vim-fugitive - Git integration
+- vim-sensible - includes a common set of default vim settings
+- ctrlp.vim - fast finding and switching files within a project
+- vim-airline - adds a nice status bar at the bottom with git status integration
+- vim-markdown - support for markdown syntax highlighting
+- vim-snipmate - more TextMate-style snippets
+- nerdtree - for project directory browsing / manipulation
+- vim-bundler - more rails support (Gemfile formatting)
+- vim-multiple-cursors - for multi-line editing
+- vim-snippets - supports a variety of code snippets (don't use this much tbh)
+- tlib_vim - support library required by other plugins
+- vim-easymotion - really powerful but don't use much at the moment, included because it's good to have goals in life.
+- vim-rails - rails erb snippet support and more
+- vim-surround - super handy plugin, quickly wrap any text with markup
