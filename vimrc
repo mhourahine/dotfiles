@@ -1,5 +1,6 @@
 execute pathogen#infect()
 syntax on
+filetype plugin on
 filetype plugin indent on
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
