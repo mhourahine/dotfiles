@@ -38,7 +38,7 @@ plugins=(git aws brew chucknorris colorize colored-man osx meteor rails ruby rvm
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/opt/local/bin:/Users/mhourahine/.rvm/gems/ruby-1.9.3-p194/bin:/Users/mhourahine/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/mhourahine/.rvm/bin
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/opt/local/bin:/Users/mhourahine/.rvm/gems/ruby-1.9.3-p194/bin:/Users/mhourahine/.rvm/gems/ruby-1.9.3-p194@global/bin:/Users/mhourahine/.rvm/bin
 export PACKAGE_DIRS=/Users/mhourahine/tgs_dev/packages
 export ACKRC=".ackrc"  #allow for per directory ack settings
 
