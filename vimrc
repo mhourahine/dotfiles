@@ -6,14 +6,15 @@ autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType scss setlocal shiftwidth=2 tabstop=2
+let mapleader=";"
 
 map <C-d> :NERDTreeToggle<CR>
 map <C-f> :Ack<CR> 
-map ;g :b#<CR>
-map ;f :bnext<CR>
-map ;b :bprevious<CR>
-map ;t :ls<CR>:b<SPACE>
-map ;q :b#<bar>:bd#<CR>
+map <leader>g :b#<CR>
+map <leader>f :bnext<CR>
+map <leader>b :bprevious<CR>
+map <leader>t :ls<CR>:b<SPACE>
+map <leader>q :b#<bar>:bd#<CR>
 
 set shiftwidth=2
 set tabstop=2
