@@ -33,7 +33,7 @@ ZSH_THEME=robbyrussell
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git aws brew chucknorris colorize colored-man osx meteor rails ruby rvmsudo wd)
+plugins=(git aws brew chucknorris colorize colored-man osx meteor rails ruby rvmsudo wd zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -62,3 +62,5 @@ alias pw="ccrypt -d .things.cpt && vim .things && ccrypt .things"
 
 bindkey "^[^[[D" backward-word 
 bindkey "^[^[[C" forward-word
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
