@@ -9,7 +9,6 @@ autocmd FileType scss setlocal shiftwidth=2 tabstop=2
 let mapleader=";"
 
 map <C-d> :NERDTreeToggle<CR>
-map <C-f> :Ack<CR> 
 map <leader>g :b#<CR>
 map <leader>f :bnext<CR>
 map <leader>b :bprevious<CR>

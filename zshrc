@@ -56,8 +56,9 @@ alias ls="ls -F"
 alias du="du -h"
 alias df="df -h"
 alias mongod="mongod run --config /usr/local/etc/mongod.conf"
-alias pw="cat .things.cpt | ccrypt -d | grep"
-alias pw_edit="ccrypt -d .things.cpt && vim .things && ccrypt .things"
+alias pw_list="cat ~/.things.cpt | ccrypt -d"
+alias pw_find="cat ~/.things.cpt | ccrypt -d | grep"
+alias pw="ccrypt -d .things.cpt && vim .things && ccrypt .things"
 
 bindkey "^[^[[D" backward-word 
 bindkey "^[^[[C" forward-word
