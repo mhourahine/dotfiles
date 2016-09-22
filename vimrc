@@ -17,7 +17,7 @@ map <leader>q :b#<bar>:bd#<CR>
 
 set shiftwidth=2
 set tabstop=2
-set guifont=Menlo:h15
+set guifont=InputMono:h15
 set hlsearch
 set laststatus=2
 set visualbell
