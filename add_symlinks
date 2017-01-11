@@ -1,5 +1,5 @@
 #!/bin/bash
-ln -s ~/dotfiles/vimrc .vimrc
-ln -s ~/dotfiles/vim .vim
-ln -s ~/dotfiles/gvimrc .gvimrc
-ln -s ~/dotfiles/zshrc .zshrc
+ln -s $(pwd)/vimrc ~/.vimrc
+ln -s $(pwd)/vim ~/.vim
+ln -s $(pwd)/gvimrc ~/.gvimrc
+ln -s $(pwd)/zshrc ~/.zshrc
