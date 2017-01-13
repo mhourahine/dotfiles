@@ -35,3 +35,5 @@ Here are the VIM plugins that are currently included and why I use them:
 - vim-easymotion - really powerful but don't use much at the moment, included because it's good to have goals in life.
 - vim-rails - rails erb snippet support and more
 - vim-surround - super handy plugin, quickly wrap any text with markup
+- syntastic - Syntax checker plugin, works with many different linters
+- syntastic-local-eslint.vim - Handy addition to syntastic with forces eslint to use the local npm version (the recommended way)
