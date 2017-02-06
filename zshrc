@@ -47,6 +47,8 @@ source ~/.rvm/scripts/rvm
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export LC_CTYPE="en_US.UTF-8"
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 # script to add ssh keys to ssh-agent
 ~/.ssh/addkeys.sh
