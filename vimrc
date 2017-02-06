@@ -37,4 +37,3 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " folding config tweaks
 let g:vim_markdown_folding_disabled = 1
-set foldingmethod=indent
