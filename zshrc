@@ -60,10 +60,14 @@ alias mongod="mongod run --config /usr/local/etc/mongod.conf"
 alias pw_list="cat ~/.things.cpt | ccrypt -d"
 alias pw_find="cat ~/.things.cpt | ccrypt -d | grep"
 alias pw="ccrypt -d .things.cpt && vim .things && ccrypt .things"
-alias python="python3"
-alias pip="pip3"
+alias gifit="~/dotfiles/gifit"
+# alias python="python3"
+# alias pip="pip3"
 
 bindkey "^[^[[D" backward-word 
 bindkey "^[^[[C" forward-word
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
+# added by Anaconda3 4.3.0 installer
+export PATH="/Users/mike/anaconda/bin:$PATH"
