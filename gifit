@@ -1,0 +1,11 @@
+# Script Requirements:
+# brew install ffmpeg 
+# brew cask install xquartz 
+# brew install gifsicle
+
+workingdir=$(pwd)
+filename=$(basename "$1")
+extension="${filename##*.}"
+filename="${filename%.*}"
+
+ffmpeg -i $1 -s 960x540 -pix_fmt rgb24 -r 5 -f gif - | gifsicle --optimize=3 --delay=5 > "${workingdir}/${filename}.gif"
