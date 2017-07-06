@@ -38,7 +38,7 @@ plugins=(git aws brew chucknorris colorize colored-man osx meteor rails ruby rvm
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:$PATH
+export PATH=~/.mongodb/versions/mongodb-current/bin:/usr/local/bin:$PATH
 export ACKRC=".ackrc"  #allow for per directory ack settings
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
@@ -62,6 +62,7 @@ alias pw_find="cat ~/.things.cpt | ccrypt -d | grep"
 alias pw="ccrypt -d .things.cpt && vim .things && ccrypt .things"
 alias python="python3"
 alias pip="pip3"
+unalias m
 
 bindkey "^[^[[D" backward-word 
 bindkey "^[^[[C" forward-word
