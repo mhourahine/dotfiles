@@ -14,6 +14,7 @@ map <leader>f :bnext<CR>
 map <leader>b :bprevious<CR>
 map <leader>t :ls<CR>:b<SPACE>
 map <leader>q :b#<bar>:bd#<CR>
+map <leader>r <C-p>
 
 set shiftwidth=2
 set tabstop=2
@@ -37,3 +38,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " folding config tweaks
 let g:vim_markdown_folding_disabled = 1
+
+" allow for project specific .vimrc files
+set exrc
+set secure
