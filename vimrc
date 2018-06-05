@@ -23,6 +23,9 @@ set hlsearch
 set laststatus=2
 set visualbell
 set hidden
+set number
+set relativenumber
+colorscheme desert
 colorscheme torte 
 
 " for syntastic
