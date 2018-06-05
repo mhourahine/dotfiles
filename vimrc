@@ -18,12 +18,12 @@ map <leader>r <C-p>
 
 set shiftwidth=2
 set tabstop=2
-set guifont=InputMono:h15
+set guifont=Monaco:h15
 set hlsearch
 set laststatus=2
 set visualbell
 set hidden
-colorscheme desert
+colorscheme torte 
 
 " for syntastic
 set statusline+=%#warningmsg#
