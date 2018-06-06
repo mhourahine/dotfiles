@@ -40,6 +40,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_filetype_map = { 'html.handlebars': 'handlebars' }
 
+let g:NERDSpaceDelims = 1
+
 " folding config tweaks
 let g:vim_markdown_folding_disabled = 1
 
