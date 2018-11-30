@@ -25,6 +25,7 @@ set visualbell
 set hidden
 set number
 set relativenumber
+set mouse=a
 colorscheme desert
 colorscheme torte 
 
@@ -50,6 +51,16 @@ let g:NERDSpaceDelims = 1
 
 " folding config tweaks
 let g:vim_markdown_folding_disabled = 1
+
+" Change cursor in edit mode when using iTerm.  Also deal with the case of
+" tmux
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
 " allow for project specific .vimrc files
 set exrc
