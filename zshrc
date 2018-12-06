@@ -32,6 +32,7 @@ alias pw_list="cat ~/.things.cpt | ccrypt -d"
 alias pw_find="cat ~/.things.cpt | ccrypt -d | grep"
 alias pw="ccrypt -d .things.cpt && vim .things && ccrypt .things"
 alias gifit="~/dotfiles/gifit"
+alias goyo="vim -c ':Goyo'"
 
 bindkey "^[^[[D" backward-word 
 bindkey "^[^[[C" forward-word
