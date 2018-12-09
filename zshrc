@@ -5,6 +5,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 export TERM="xterm-256color"
 export ACKRC=".ackrc"  #allow for per directory ack settings
+export FZF_DEFAULT_COMMAND='ag --ignore .git -g ""'
 
 # OH MY ZSH
 ZSH=$HOME/.oh-my-zsh
@@ -32,7 +33,7 @@ alias pw_list="cat ~/.things.cpt | ccrypt -d"
 alias pw_find="cat ~/.things.cpt | ccrypt -d | grep"
 alias pw="ccrypt -d .things.cpt && vim .things && ccrypt .things"
 alias gifit="~/dotfiles/gifit"
-alias goyo="vim -c ':Goyo'"
+alias goyo="vim -c ':Mgoyo'"
 
 bindkey "^[^[[D" backward-word 
 bindkey "^[^[[C" forward-word

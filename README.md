@@ -23,7 +23,7 @@ Here are the VIM plugins that are currently included and why I use them:
 - vim-addon-mw-utils - required by other plugins
 - vim-fugitive - Git integration
 - vim-sensible - includes a common set of default vim settings
-- ctrlp.vim - fast finding and switching files within a project
+- fzf.vim - fast finding and switching files within a project
 - vim-airline - adds a nice status bar at the bottom with git status integration
 - vim-markdown - support for markdown syntax highlighting
 - vim-snipmate - more TextMate-style snippets
@@ -37,3 +37,15 @@ Here are the VIM plugins that are currently included and why I use them:
 - vim-surround - super handy plugin, quickly wrap any text with markup
 - syntastic - Syntax checker plugin, works with many different linters
 - syntastic-local-eslint.vim - Handy addition to syntastic with forces eslint to use the local npm version (the recommended way)
+
+## Packages to install
+
+```
+zsh
+vim
+fzf
+tmux
+ack
+ag
+```
+

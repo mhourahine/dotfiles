@@ -2,19 +2,15 @@ execute pathogen#infect()
 syntax on
 filetype plugin on
 filetype plugin indent on
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType scss setlocal shiftwidth=2 tabstop=2
-let mapleader=";"
 
-map <C-d> :NERDTreeToggle<CR>
+let mapleader=";"
+map <leader>d :NERDTreeFind<CR>
 map <leader>g :b#<CR>
 map <leader>f :bnext<CR>
 map <leader>b :bprevious<CR>
 map <leader>t :ls<CR>:b<SPACE>
 map <leader>q :b#<bar>:bd#<CR>
-map <leader>r <C-p>
+map <leader>s :FZF<CR>
 
 set shiftwidth=2
 set tabstop=2
@@ -26,8 +22,8 @@ set hidden
 set number
 set relativenumber
 set mouse=a
-colorscheme desert
-colorscheme torte 
+set rtp+=/usr/local/opt/fzf
+
 
 if has("clipboard")
   set clipboard=unnamed " copy to the system clipboard
@@ -61,6 +57,12 @@ else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+function Mgoyo()
+	set filetype=markdown
+	Goyo
+endfunction
+command Mgoyo call Mgoyo()
 
 " allow for project specific .vimrc files
 set exrc
