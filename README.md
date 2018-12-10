@@ -47,5 +47,7 @@ fzf
 tmux
 ack
 ag
+gtop #for unixporn
+neofetch #for unixporn
 ```
 

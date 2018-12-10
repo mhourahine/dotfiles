@@ -17,8 +17,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=~/.mongodb/versions/mongodb-current/bin:/usr/local/bin:$PATH
-
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=$PATH:`npm config get prefix`/bin
+
 #source ~/.rvm/scripts/rvm
 
 
