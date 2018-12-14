@@ -3,6 +3,9 @@ syntax on
 filetype plugin on
 filetype plugin indent on
 
+"colorscheme desert
+colorscheme adventurous
+
 let mapleader=";"
 map <leader>d :NERDTreeFind<CR>
 map <leader>g :b#<CR>
@@ -11,6 +14,7 @@ map <leader>b :bprevious<CR>
 map <leader>t :ls<CR>:b<SPACE>
 map <leader>q :b#<bar>:bd#<CR>
 map <leader>s :FZF<CR>
+map <leader>n :TagbarToggle<CR>
 
 set shiftwidth=2
 set tabstop=2
@@ -23,6 +27,7 @@ set number
 set relativenumber
 set mouse=a
 set rtp+=/usr/local/opt/fzf
+set tags=./tags,tags;
 
 
 if has("clipboard")
