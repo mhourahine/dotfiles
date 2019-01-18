@@ -85,3 +85,6 @@
 [submodule "vim/bundle/vim-adventurous"]
 	path = vim/bundle/vim-adventurous
 	url = https://github.com/Dru89/vim-adventurous.git
+[submodule "vim/bundle/scss-syntax.vim"]
+	path = vim/bundle/scss-syntax.vim
+	url = https://github.com/cakebaker/scss-syntax.vim

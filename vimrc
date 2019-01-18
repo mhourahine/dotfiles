@@ -1,4 +1,6 @@
 execute pathogen#infect()
+scriptencoding utf-8
+set encoding=utf-8
 syntax on
 filetype plugin on
 filetype plugin indent on
@@ -25,9 +27,17 @@ set visualbell
 set hidden
 set number
 set relativenumber
-set mouse=a
 set rtp+=/usr/local/opt/fzf
 set tags=./tags,tags;
+set list
+set listchars=tab:\⎪\   
+
+"set mouse support properly when using tmux
+set mouse+=a
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
 
 
 if has("clipboard")
