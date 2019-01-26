@@ -12,7 +12,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs ssh dir_writable)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator)
-plugins=(git aws brew chucknorris colorize colored-man osx meteor rails ruby rvmsudo wd zsh-syntax-highlighting)
+plugins=(git aws colorize colored-man osx meteor ruby rvmsudo wd zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...

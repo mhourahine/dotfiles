@@ -1,8 +1,0 @@
-#!/bin/bash
-ln -s $(pwd)/vimrc ~/.vimrc
-ln -s $(pwd)/vim ~/.vim
-ln -s $(pwd)/gvimrc ~/.gvimrc
-ln -s $(pwd)/zshrc ~/.zshrc
-ln -s $(pwd)/ackrc ~/.ackrc
-ln -s $(pwd)/scss-lint.yml ~/.scss-lint.yml
-ln -s $(pwd)/tmux.conf ~/.tmux.conf
