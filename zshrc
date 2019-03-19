@@ -23,7 +23,6 @@ export PATH=$PATH:`npm config get prefix`/bin
 
 #source ~/.rvm/scripts/rvm
 
-
 # script to add ssh keys to ssh-agent
 #~/.ssh/addkeys.sh
 
@@ -35,6 +34,7 @@ alias pw_list="cat ~/.things.cpt | ccrypt -d"
 alias pw_find="cat ~/.things.cpt | ccrypt -d | grep"
 alias pw="ccrypt -d .things.cpt && vim .things && ccrypt .things"
 alias gifit="~/dotfiles/gifit"
+alias gbr='git branch | grep -v "develop" | xargs git branch -D'
 alias goyo="vim -c ':Mgoyo'"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias notes='cd ~/Dropbox/notes && mvim .'
