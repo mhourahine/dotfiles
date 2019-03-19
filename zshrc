@@ -67,6 +67,7 @@ unalias m
 alias gifit="~/dotfiles/gifit"
 # alias python="python3"
 # alias pip="pip3"
+alias gbr='git branch | grep -v "develop" | xargs git branch -D'
 
 bindkey "^[^[[D" backward-word 
 bindkey "^[^[[C" forward-word
