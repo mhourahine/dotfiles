@@ -73,3 +73,18 @@
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "vim/bundle/goyo.vim"]
+	path = vim/bundle/goyo.vim
+	url = https://github.com/junegunn/goyo.vim.git
+[submodule "vim/bundle/fzf.vim"]
+	path = vim/bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim.git
+[submodule "vim/bundle/tagbar"]
+	path = vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule "vim/bundle/vim-adventurous"]
+	path = vim/bundle/vim-adventurous
+	url = https://github.com/Dru89/vim-adventurous.git
+[submodule "vim/bundle/scss-syntax.vim"]
+	path = vim/bundle/scss-syntax.vim
+	url = https://github.com/cakebaker/scss-syntax.vim

@@ -1,20 +1,22 @@
 execute pathogen#infect()
+scriptencoding utf-8
+set encoding=utf-8
 syntax on
 filetype plugin on
 filetype plugin indent on
-autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType scss setlocal shiftwidth=2 tabstop=2
-let mapleader=";"
 
-map <C-d> :NERDTreeToggle<CR>
+"colorscheme desert
+colorscheme adventurous
+
+let mapleader=";"
+map <leader>d :NERDTreeFind<CR>
 map <leader>g :b#<CR>
 map <leader>f :bnext<CR>
 map <leader>b :bprevious<CR>
 map <leader>t :ls<CR>:b<SPACE>
 map <leader>q :b#<bar>:bd#<CR>
-map <leader>r <C-p>
+map <leader>s :FZF<CR>
+map <leader>n :TagbarToggle<CR>
 
 set shiftwidth=2
 set tabstop=2
@@ -25,8 +27,26 @@ set visualbell
 set hidden
 set number
 set relativenumber
-colorscheme desert
-colorscheme torte 
+set rtp+=/usr/local/opt/fzf
+set tags=./tags,tags;
+set list
+set listchars=tab:\⎪\   
+
+"set mouse support properly when using tmux
+set mouse+=a
+if &term =~ '^screen'
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+endif
+
+
+if has("clipboard")
+  set clipboard=unnamed " copy to the system clipboard
+
+  if has("unnamedplus") " X11 support
+    set clipboard+=unnamedplus
+  endif
+endif
 
 " for syntastic
 set statusline+=%#warningmsg#
@@ -42,6 +62,22 @@ let g:NERDSpaceDelims = 1
 
 " folding config tweaks
 let g:vim_markdown_folding_disabled = 1
+
+" Change cursor in edit mode when using iTerm.  Also deal with the case of
+" tmux
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
+
+function Mgoyo()
+	set filetype=markdown
+	Goyo
+endfunction
+command Mgoyo call Mgoyo()
 
 " allow for project specific .vimrc files
 set exrc
