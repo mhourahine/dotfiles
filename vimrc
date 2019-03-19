@@ -16,7 +16,7 @@ map <leader>b :bprevious<CR>
 map <leader>t :ls<CR>:b<SPACE>
 map <leader>q :b#<bar>:bd#<CR>
 map <leader>s :FZF<CR>
-map <leader>n :TagbarToggle<CR>
+map <leader>n :exe 'norm i##'.system("date")<CR>
 
 set shiftwidth=2
 set tabstop=2

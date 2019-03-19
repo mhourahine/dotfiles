@@ -7,6 +7,7 @@ export TERM="xterm-256color"
 export ACKRC=".ackrc"  #allow for per directory ack settings
 export FZF_DEFAULT_COMMAND='ag --ignore .git -g ""'
 
+
 # OH MY ZSH
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="powerlevel9k/powerlevel9k"
@@ -35,6 +36,8 @@ alias pw_find="cat ~/.things.cpt | ccrypt -d | grep"
 alias pw="ccrypt -d .things.cpt && vim .things && ccrypt .things"
 alias gifit="~/dotfiles/gifit"
 alias goyo="vim -c ':Mgoyo'"
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias notes='cd ~/Dropbox/notes && mvim .'
 
 bindkey "^[^[[D" backward-word 
 bindkey "^[^[[C" forward-word
@@ -44,3 +47,7 @@ if [ -f '/Users/mike/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mike/googl
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/mike/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mike/google-cloud-sdk/completion.zsh.inc'; fi
+
+# source any customizations you don't want in the dotfiles repo
+source ~/.local/zshrc.local
+
