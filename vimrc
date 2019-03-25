@@ -57,6 +57,7 @@ set statusline+=%*
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
+let g:syntastic_javascript_checkers = ['eslint']
 
 let g:NERDSpaceDelims = 1
 
