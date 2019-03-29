@@ -48,16 +48,11 @@ if has("clipboard")
   endif
 endif
 
-" for syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" only use eslint for javascript files
+" set up ALE
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
-let g:syntastic_javascript_checkers = ['eslint']
+let g:ale_javascript_eslint_executable='npx eslint'
 
 let g:NERDSpaceDelims = 1
 
