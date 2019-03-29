@@ -32,6 +32,13 @@ set tags=./tags,tags;
 set list
 set listchars=tab:\⎪\   
 
+" allow for project specific .vimrc files
+set exrc
+set secure
+
+"make completion use only current file and ctags
+set complete=.,t  "
+
 "set mouse support properly when using tmux
 set mouse+=a
 if &term =~ '^screen'
@@ -75,6 +82,4 @@ function Mgoyo()
 endfunction
 command Mgoyo call Mgoyo()
 
-" allow for project specific .vimrc files
-set exrc
-set secure
+command Maketags !ctags -R .

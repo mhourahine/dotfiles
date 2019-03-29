@@ -4,15 +4,6 @@
 [submodule "vim/bundle/ack.vim"]
 	path = vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/vim-snipmate"]
-	path = vim/bundle/vim-snipmate
-	url = https://github.com/garbas/vim-snipmate.git
-[submodule "vim/bundle/vim-easymotion"]
-	path = vim/bundle/vim-easymotion
-	url = https://github.com/Lokaltog/vim-easymotion.git
-[submodule "vim/bundle/vim-multiple-cursors"]
-	path = vim/bundle/vim-multiple-cursors
-	url = https://github.com/terryma/vim-multiple-cursors.git
 [submodule "vim/bundle/vim-addon-mw-utils"]
 	path = vim/bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
@@ -28,9 +19,6 @@
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
-[submodule "vim/bundle/vim-snippets"]
-	path = vim/bundle/vim-snippets
-	url = https://github.com/honza/vim-snippets.git
 [submodule "vim/bundle/vim-surround"]
 	path = vim/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
@@ -46,12 +34,6 @@
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
-[submodule "vim/bundle/syntastic-local-eslint.vim"]
-	path = vim/bundle/syntastic-local-eslint.vim
-	url = https://github.com/mtscout6/syntastic-local-eslint.vim.git
 [submodule "vim/bundle/vim-jsx"]
 	path = vim/bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
@@ -79,9 +61,6 @@
 [submodule "vim/bundle/fzf.vim"]
 	path = vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim.git
-[submodule "vim/bundle/tagbar"]
-	path = vim/bundle/tagbar
-	url = https://github.com/majutsushi/tagbar.git
 [submodule "vim/bundle/vim-adventurous"]
 	path = vim/bundle/vim-adventurous
 	url = https://github.com/Dru89/vim-adventurous.git

@@ -1,4 +1,7 @@
 #!/bin/bash
+# install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+rm ~/.zshrc
 
 # set up all symlinks
 ln -s $(pwd)/vimrc ~/.vimrc
@@ -12,11 +15,6 @@ ln -s $(pwd)/tmux.conf ~/.tmux.conf
 # pull and update git submodules
 git submodule update --init --recursive
 git submodule foreach git pull origin master
-
-# install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-rm ~/.zshrc
-mv ~/.zshrc-pre-oh-my-sh .zshrc
 
 # install powerlevel9k
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
