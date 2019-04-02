@@ -38,6 +38,7 @@ alias gbr='git branch | grep -v "develop" | xargs git branch -D'
 alias goyo="vim -c ':Mgoyo'"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias notes='cd ~/Dropbox/notes && mvim .'
+alias ctags_js='ctags --options=$HOME/dotfiles/ctags-js -R .'
 
 bindkey "^[^[[D" backward-word 
 bindkey "^[^[[C" forward-word
