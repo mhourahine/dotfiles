@@ -17,9 +17,8 @@ plugins=(git aws colorize colored-man osx meteor ruby rvmsudo wd zsh-syntax-high
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/.mongodb/versions/mongodb-current/bin:/usr/local/bin:$PATH
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH=$PATH:`npm config get prefix`/bin
+export PATH=~/.mongodb/versions/mongodb-current/bin:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=`npm config get prefix`/bin:$PATH
 
 #source ~/.rvm/scripts/rvm
 
