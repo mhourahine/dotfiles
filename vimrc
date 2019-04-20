@@ -6,7 +6,10 @@ filetype plugin on
 filetype plugin indent on
 
 "colorscheme desert
-colorscheme adventurous
+"colorscheme adventurous
+"colorscheme dankneon
+set background=dark
+colorscheme palenight
 
 let mapleader=";"
 map <leader>d :NERDTreeFind<CR>

@@ -7,13 +7,13 @@ export TERM="xterm-256color"
 export ACKRC=".ackrc"  #allow for per directory ack settings
 export FZF_DEFAULT_COMMAND='ag --ignore .git -g ""'
 
-
 # OH MY ZSH
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs ssh dir_writable)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs ssh dir_writable)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator)
-plugins=(git aws colorize colored-man osx meteor ruby rvmsudo wd zsh-syntax-highlighting)
+ZSH_TMUX_AUTOSTART=true
+plugins=(git catimg colorize colored-man history last-working-dir osx npm meteor wd sudo tmux zsh-syntax-highlighting z)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...

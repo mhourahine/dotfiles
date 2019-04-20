@@ -64,3 +64,6 @@
 [submodule "vim/bundle/scss-syntax.vim"]
 	path = vim/bundle/scss-syntax.vim
 	url = https://github.com/cakebaker/scss-syntax.vim
+[submodule "vim/bundle/palenight.vim"]
+	path = vim/bundle/palenight.vim
+	url = https://github.com/drewtempelmeyer/palenight.vim.git
