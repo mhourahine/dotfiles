@@ -1,11 +1,11 @@
-export CLICOLOR=1
-export LSCOLORS=ExFxCxDxBxegedabagacad
-export LC_CTYPE="en_US.UTF-8"
-export VISUAL=vim
-export EDITOR="$VISUAL"
-export TERM="xterm-256color"
-export ACKRC=".ackrc"  #allow for per directory ack settings
-export FZF_DEFAULT_COMMAND='ag --ignore .git -g ""'
+CLICOLOR=1
+LSCOLORS=ExFxCxDxBxegedabagacad
+LC_CTYPE="en_US.UTF-8"
+VISUAL=vim
+EDITOR="$VISUAL"
+TERM="xterm-256color"
+ACKRC=".ackrc"  #allow for per directory ack settings
+FZF_DEFAULT_COMMAND='ag --ignore .git -g ""'
 
 # OH MY ZSH
 ZSH=$HOME/.oh-my-zsh
@@ -13,7 +13,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs ssh dir_writable)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator)
 ZSH_TMUX_AUTOSTART=true
-plugins=(git catimg colorize colored-man history last-working-dir osx npm meteor wd sudo tmux zsh-syntax-highlighting z)
+plugins=(git colorize colored-man-pages history last-working-dir osx npm meteor wd sudo tmux z zsh_reload)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
