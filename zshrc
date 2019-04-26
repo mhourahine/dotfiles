@@ -38,6 +38,7 @@ alias goyo="vim -c ':Mgoyo'"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias notes='cd ~/Dropbox/notes && vim .'
 alias ctags_js='ctags --options=$HOME/dotfiles/ctags-js -R .'
+alias md_to_rte='pandoc -f markdown_mmd -t rtf -s'
 
 bindkey "^[^[[D" backward-word 
 bindkey "^[^[[C" forward-word
