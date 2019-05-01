@@ -1,7 +1,7 @@
 CLICOLOR=1
 LSCOLORS=ExFxCxDxBxegedabagacad
 LC_CTYPE="en_US.UTF-8"
-VISUAL=vim
+VISUAL="vim"
 EDITOR="$VISUAL"
 TERM="xterm-256color"
 ACKRC=".ackrc"  #allow for per directory ack settings
@@ -34,6 +34,8 @@ alias pw_find="cat ~/.things.cpt | ccrypt -d | grep"
 alias pw="ccrypt -d .things.cpt && vim .things && ccrypt .things"
 alias gifit="~/dotfiles/gifit"
 alias gbr='git branch | grep -v "develop" | xargs git branch -D'
+alias gss='git status -s'
+alias grhh='git reset --hard head'
 alias goyo="vim -c ':Mgoyo'"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias notes='cd ~/Dropbox/notes && vim .'
