@@ -49,6 +49,7 @@ ack
 ag
 gtop #for unixporn
 neofetch #for unixporn
+pip3 install gcalcli #for gcal command line
 ```
 
 

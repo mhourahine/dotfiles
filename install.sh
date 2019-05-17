@@ -11,6 +11,7 @@ ln -s $(pwd)/zshrc ~/.zshrc
 ln -s $(pwd)/ackrc ~/.ackrc
 ln -s $(pwd)/scss-lint.yml ~/.scss-lint.yml
 ln -s $(pwd)/tmux.conf ~/.tmux.conf
+ln -s $(pwd)/gcalclirc ~/.gcalclirc
 
 # pull and update git submodules
 git submodule update --init --recursive

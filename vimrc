@@ -86,3 +86,5 @@ endfunction
 command Mgoyo call Mgoyo()
 
 command Maketags !ctags -R .
+
+com! Formatjson %!python -m json.tool

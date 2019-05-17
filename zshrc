@@ -5,7 +5,7 @@ VISUAL="vim"
 EDITOR="$VISUAL"
 TERM="xterm-256color"
 ACKRC=".ackrc"  #allow for per directory ack settings
-FZF_DEFAULT_COMMAND='ag --ignore .git -g ""'
+FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # OH MY ZSH
 ZSH=$HOME/.oh-my-zsh
@@ -13,7 +13,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs ssh dir_writable)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator)
 ZSH_TMUX_AUTOSTART=true
-plugins=(git colorize colored-man-pages history last-working-dir osx npm meteor wd sudo tmux z zsh_reload)
+plugins=(git colorize colored-man-pages history last-working-dir osx npm meteor wd sudo z zsh_reload)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
@@ -41,6 +41,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 alias notes='cd ~/Dropbox/notes && vim .'
 alias ctags_js='ctags --options=$HOME/dotfiles/ctags-js -R .'
 alias md_to_rte='pandoc -f markdown_mmd -t rtf -s'
+alias today='gcalcli agenda'
 
 bindkey "^[^[[D" backward-word 
 bindkey "^[^[[C" forward-word
