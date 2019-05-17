@@ -41,7 +41,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 alias notes='cd ~/Dropbox/notes && vim .'
 alias ctags_js='ctags --options=$HOME/dotfiles/ctags-js -R .'
 alias md_to_rte='pandoc -f markdown_mmd -t rtf -s'
-alias today='gcalcli agenda'
+alias agenda='gcalcli agenda'
 
 bindkey "^[^[[D" backward-word 
 bindkey "^[^[[C" forward-word
