@@ -20,6 +20,10 @@ map <leader>t :ls<CR>:b<SPACE>
 map <leader>q :b#<bar>:bd#<CR>
 map <leader>s :FZF<CR>
 map <leader>n :exe 'norm i##'.system("date")<CR>
+nnoremap <C-j> <C-d>
+nnoremap <C-k> <C-u>
+nnoremap <C-Down> <C-d>
+nnoremap <C-Up> <C-u>
 
 set shiftwidth=2
 set tabstop=2
@@ -67,7 +71,8 @@ let g:ale_javascript_eslint_executable='npx eslint'
 let g:NERDSpaceDelims = 1
 
 " folding config tweaks
-let g:vim_markdown_folding_disabled = 1
+set foldmethod=indent
+set foldlevelstart=99
 
 " Change cursor in edit mode when using iTerm.  Also deal with the case of
 " tmux
