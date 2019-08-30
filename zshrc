@@ -36,6 +36,8 @@ alias gifit="~/dotfiles/gifit"
 alias gbr='git branch | grep -v "develop" | xargs git branch -D'
 alias gss='git status -s'
 alias grhh='git reset --hard head'
+alias mni='meteor npm install'
+alias mns='meteor npm start'
 alias goyo="vim -c ':Mgoyo'"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias notes='cd ~/Dropbox/notes && vim .'
