@@ -40,7 +40,7 @@ alias mni='meteor npm install'
 alias mns='meteor npm start'
 alias goyo="vim -c ':Mgoyo'"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-alias notes='cd ~/Dropbox/notes && vim .'
+alias notes='mvim ~/Dropbox/notes'
 alias ctags_js='ctags --options=$HOME/dotfiles/ctags-js -R .'
 alias md_to_rte='pandoc -f markdown_mmd -t rtf -s'
 alias agenda='gcalcli agenda'
