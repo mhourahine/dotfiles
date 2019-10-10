@@ -44,6 +44,7 @@ alias notes='mvim ~/Dropbox/notes'
 alias ctags_js='ctags --options=$HOME/dotfiles/ctags-js -R .'
 alias md_to_rte='pandoc -f markdown_mmd -t rtf -s'
 alias agenda='gcalcli agenda'
+alias sptd='spotifyd --no-daemon'
 
 bindkey "^[^[[D" backward-word 
 bindkey "^[^[[C" forward-word
