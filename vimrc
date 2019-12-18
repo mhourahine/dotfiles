@@ -1,4 +1,20 @@
-execute pathogen#infect()
+"***** Plugins *****
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'drewtempelmeyer/palenight.vim'
+"syntax support
+Plug 'dense-analysis/ale'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'cakebaker/scss-syntax.vim'
+call plug#end()
+
 scriptencoding utf-8
 set encoding=utf-8
 syntax on
@@ -39,6 +55,10 @@ set tags=./tags,tags;
 set list
 set listchars=tab:\⎪\   
 
+" folding config tweaks
+set foldmethod=indent
+set foldlevelstart=99
+
 " allow for project specific .vimrc files
 set exrc
 set secure
@@ -62,6 +82,7 @@ if has("clipboard")
 	endif
 endif
 
+
 " set up ALE
 let g:ale_linters = {
 \   'javascript': ['eslint'],
@@ -70,9 +91,6 @@ let g:ale_javascript_eslint_executable='npx eslint'
 
 let g:NERDSpaceDelims = 1
 
-" folding config tweaks
-set foldmethod=indent
-set foldlevelstart=99
 
 " Change cursor in edit mode when using iTerm.  Also deal with the case of
 " tmux
@@ -84,12 +102,8 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
-function Mgoyo()
-	set filetype=markdown
-	Goyo
-endfunction
-command Mgoyo call Mgoyo()
-
+"**** COMMANDS ****
+"
 command Maketags !ctags -R .
 
 com! Formatjson %!python -m json.tool
