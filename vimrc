@@ -26,6 +26,7 @@ filetype plugin indent on
 "colorscheme dankneon
 set background=dark
 colorscheme palenight
+"colorscheme default
 
 let mapleader=";"
 map <leader>d :NERDTreeFind<CR>
@@ -45,7 +46,6 @@ set shiftwidth=2
 set tabstop=2
 set guifont=Monaco:h15
 set hlsearch
-set laststatus=2
 set visualbell
 set hidden
 set number
@@ -54,6 +54,14 @@ set rtp+=/usr/local/opt/fzf
 set tags=./tags,tags;
 set list
 set listchars=tab:\⎪\   
+
+" statusline stuff
+set laststatus=2
+set statusline=%{FugitiveStatusline()}
+set statusline+=\ \ %f
+set statusline+=\ \ %y
+set statusline+=%=
+set statusline+=%3*\ Line:\ %l\/%L
 
 " folding config tweaks
 set foldmethod=indent
