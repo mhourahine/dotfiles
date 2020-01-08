@@ -1,0 +1,36 @@
+#!/bin/bash
+if [ -z $1 ]
+then
+	exit
+fi
+
+if [ $1 = 'on' ]
+then
+	desktopValue='false'
+	dockValue='TRUE'
+	screenValue='1'
+elif [ $1 = 'off' ]
+	then
+		desktopValue='true'
+		dockValue='FALSE'
+		screenValue='3'
+fi
+
+defaults write com.apple.finder CreateDesktop $desktopValue
+killall Finder
+
+defaults write com.apple.Dock autohide -bool $dockValue 
+killall Dock
+
+script="tell application \"System Preferences\"\r
+	reveal anchor \"displaysDisplayTab\" of pane \"com.apple.preference.displays\"\r
+end tell\r
+tell application \"System Events\" to tell process \"System Preferences\" to tell window \"PN-K321\"\r
+	click radio button \"Scaled\" of radio group 1 of tab group 1\r
+	click radio button DSPVALUE of radio group 1 of group 1 of tab group 1\r
+end tell\r
+quit application \"System Preferences\"\r"
+# osascript -e $(echo \'${script}\' | sed -e "s/DSPVALUE/${screenValue}/g") 
+# echo \'${script}\' | sed -e "s/DSPVALUE/${screenValue}/g" 
+
+
