@@ -113,5 +113,6 @@ endif
 "**** COMMANDS ****
 "
 command Maketags !ctags -R .
+command Notes cd ~/Dropbox/notes | e today.md
+command Formatjson %!python -m json.tool
 
-com! Formatjson %!python -m json.tool
