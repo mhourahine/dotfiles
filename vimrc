@@ -41,6 +41,7 @@ nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
 nnoremap <C-Down> <C-d>
 nnoremap <C-Up> <C-u>
+inoremap jk <esc>
 
 set shiftwidth=2
 set tabstop=2
