@@ -7,6 +7,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'junegunn/goyo.vim'
 "syntax support
 Plug 'dense-analysis/ale'
 Plug 'pangloss/vim-javascript'
@@ -28,7 +29,7 @@ set background=dark
 colorscheme palenight
 "colorscheme default
 
-let mapleader=";"
+"let mapleader=";"
 map <leader>d :NERDTreeFind<CR>
 map <leader>g :b#<CR>
 map <leader>f :bnext<CR>
@@ -55,6 +56,7 @@ set rtp+=/usr/local/opt/fzf
 set tags=./tags,tags;
 set list
 set listchars=tab:\⎪\   
+set showmatch  "show matching bracket
 
 " statusline stuff
 set laststatus=2
