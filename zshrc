@@ -58,3 +58,5 @@ if [ -f '/Users/mike/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mike
 # source any customizations you don't want in the dotfiles repo
 source ~/.local/zshrc.local
 
+
+source /Users/mike/Library/Preferences/org.dystroy.broot/launcher/bash/br
