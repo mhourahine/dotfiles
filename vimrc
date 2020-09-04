@@ -15,6 +15,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'elzr/vim-json'
 call plug#end()
 
 scriptencoding utf-8
