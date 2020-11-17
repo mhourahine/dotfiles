@@ -4,7 +4,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf.vim'
-"Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 Plug 'voldikss/vim-floaterm'
 Plug 'scrooloose/nerdcommenter'
 Plug 'drewtempelmeyer/palenight.vim'
@@ -95,6 +95,29 @@ if has("clipboard")
 	endif
 endif
 
+" configured grep to use ag
+if executable('ag')
+	set grepprg=ag\ --vimgrep\ $*
+	set grepformat=%f:%l:%c:%m
+endif
+
+" romainl's grep set up from https://gist.github.com/romainl/56f0c28ef953ffc157f36cc495947ab3
+function! Grep(...)
+	return system(join([&grepprg] + [expandcmd(join(a:000, ' '))], ' '))
+endfunction
+
+command! -nargs=+ -complete=file_in_path -bar Grep  cgetexpr Grep(<f-args>)
+command! -nargs=+ -complete=file_in_path -bar LGrep lgetexpr Grep(<f-args>)
+
+cnoreabbrev <expr> grep  (getcmdtype() ==# ':' && getcmdline() ==# 'grep')  ? 'Grep'  : 'grep'
+cnoreabbrev <expr> lgrep (getcmdtype() ==# ':' && getcmdline() ==# 'lgrep') ? 'LGrep' : 'lgrep'
+
+augroup quickfix
+	autocmd!
+	autocmd QuickFixCmdPost cgetexpr cwindow
+	autocmd QuickFixCmdPost lgetexpr lwindow
+augroup END
+" end of romainl's snippet
 
 " set up ALE
 let g:ale_linters = {
@@ -103,7 +126,6 @@ let g:ale_linters = {
 let g:ale_javascript_eslint_executable='npx eslint'
 
 let g:NERDSpaceDelims = 1
-
 
 " Change cursor in edit mode when using iTerm.  Also deal with the case of
 " tmux
@@ -117,7 +139,7 @@ endif
 
 "**** COMMANDS ****
 "
-command Maketags !ctags -R .
+command Maketags !ag --hidden --ignore .git -g "" | ctags -R  --links=no -L -
 command Notes cd ~/Dropbox/notes | e today.md
 command Formatjson %!python -m json.tool
 

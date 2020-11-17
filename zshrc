@@ -1,11 +1,10 @@
-CLICOLOR=1
-LSCOLORS=ExFxCxDxBxegedabagacad
-LC_CTYPE="en_US.UTF-8"
-VISUAL="vim"
-EDITOR="$VISUAL"
-TERM="xterm-256color"
-ACKRC=".ackrc"  #allow for per directory ack settings
-FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+export LC_CTYPE="en_US.UTF-8"
+export VISUAL="vim"
+export EDITOR="$VISUAL"
+export TERM="xterm-256color"
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
 # OH MY ZSH
 ZSH=$HOME/.oh-my-zsh
@@ -57,6 +56,3 @@ if [ -f '/Users/mike/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mike
 
 # source any customizations you don't want in the dotfiles repo
 source ~/.local/zshrc.local
-
-
-source /Users/mike/Library/Preferences/org.dystroy.broot/launcher/bash/br

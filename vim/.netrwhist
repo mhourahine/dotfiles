@@ -1,4 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/mike/dev/holocron-reports'
+let g:netrw_dirhist_0='/Users/mike/dev/holocron-reports/js_report_data/templates/Default Credit Transcript with GPA'
+let g:netrw_dirhist_9='/Users/mike/dev/holocron-reports/js_report_data/templates'
+let g:netrw_dirhist_8='/Users/mike/dev/holocron-reports/js_report_data/templates/Default Credit Transcript with GPA'
+let g:netrw_dirhist_7='/Users/mike/dev/holocron-reports/js_report_data/templates'
+let g:netrw_dirhist_6='/Users/mike/dev/holocron-reports/js_report_data/templates/Default Credit Report'
+let g:netrw_dirhist_5='/Users/mike/dev/holocron-reports/js_report_data/templates'
+let g:netrw_dirhist_4='/Users/mike/dev/holocron-reports/js_report_data'
+let g:netrw_dirhist_3='/Users/mike/dev/holocron-reports'
 let g:netrw_dirhist_2='/Users/mike/dev/wrccs-yearbook/src'
-let g:netrw_dirhist_1='/Users/mike/dev/wrccs-yearbook'
