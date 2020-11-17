@@ -17,10 +17,11 @@ plugins=(git colorize colored-man-pages history last-working-dir osx npm meteor 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=~/.mongodb/versions/mongodb-current/bin:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=~/.mongodb/versions/mongodb-current/bin:/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=`npm config get prefix`/bin:$PATH
 
-#source ~/.rvm/scripts/rvm
+export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include"
 
 # script to add ssh keys to ssh-agent
 #~/.ssh/addkeys.sh
@@ -58,5 +59,10 @@ if [ -f '/Users/mike/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mike
 # source any customizations you don't want in the dotfiles repo
 source ~/.local/zshrc.local
 
-
 source /Users/mike/Library/Preferences/org.dystroy.broot/launcher/bash/br
+
+# for pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
