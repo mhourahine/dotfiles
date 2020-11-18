@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export LC_CTYPE="en_US.UTF-8"
@@ -6,14 +13,16 @@ export EDITOR="$VISUAL"
 export TERM="xterm-256color"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 
+#set up Z
+. /usr/local/etc/profile.d/z.sh
+
 # OH MY ZSH
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs ssh dir_writable)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator)
+ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_TMUX_AUTOSTART=true
 plugins=(git colorize colored-man-pages history last-working-dir osx npm meteor wd sudo z zsh_reload)
 source $ZSH/oh-my-zsh.sh
+
 
 # Customize to your needs...
 export PATH=~/.mongodb/versions/mongodb-current/bin:/usr/local/bin:/usr/local/sbin:$PATH
@@ -62,3 +71,6 @@ source ~/.local/zshrc.local
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
