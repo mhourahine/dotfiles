@@ -33,11 +33,10 @@ colorscheme palenight
 "let mapleader=";"
 map <leader>d :NERDTreeFind<CR>
 map <leader>g :b#<CR>
-map <leader>f :bnext<CR>
-map <leader>b :bprevious<CR>
+map <leader>b :Buffers<CR>
 map <leader>t :ls<CR>:b<SPACE>
 map <leader>q :b#<bar>:bd#<CR>
-map <leader>s :FZF<CR>
+map <leader>f :GFiles<CR>
 map <leader>n :exe 'norm i##'.system("date")<CR>
 nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
