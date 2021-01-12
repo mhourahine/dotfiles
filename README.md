@@ -38,20 +38,35 @@ Here are the VIM plugins that are currently included and why I use them:
 - syntastic - Syntax checker plugin, works with many different linters
 - syntastic-local-eslint.vim - Handy addition to syntastic with forces eslint to use the local npm version (the recommended way)
 
-## Packages to install
+## Packages to install (via apt or brew)
 
 ```
+zlib #required for some builds, e.g. python
 zsh
-vim
-fzf
 tmux
-ack
-ag
-gtop #for unixporn
-neofetch #for unixporn
-pip3 install gcalcli #for gcal command line
+fzf
+git
+htop
+macvim
+neofetch
+node
+the_silver_searcher
+z
+pyenv #for python version management
+tty-clock
+speedtest-cli
+ranger
+tree
+ctags
+wget
 ```
 
+## Nodes packages to global install
+
+```
+gtop #for unixporn
+m #for mongo version management
+```
 
 # On Debian
 

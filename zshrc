@@ -12,6 +12,8 @@ export VISUAL="vim"
 export EDITOR="$VISUAL"
 export TERM="xterm-256color"
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export LDFLAGS="-L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include"
 
 #set up Z
 . /usr/local/etc/profile.d/z.sh
@@ -25,11 +27,8 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Customize to your needs...
-export PATH=~/.mongodb/versions/mongodb-current/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=`npm config get prefix`/bin:$PATH
-
-export LDFLAGS="-L/usr/local/opt/zlib/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include"
 
 # script to add ssh keys to ssh-agent
 #~/.ssh/addkeys.sh
@@ -47,6 +46,7 @@ alias gss='git status -s'
 alias grhh='git reset --hard head'
 alias mni='meteor npm install'
 alias mns='meteor npm start'
+unalias m #get rid of automatic meteor alias
 alias goyo="vim -c ':Mgoyo'"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias notes='mvim ~/Dropbox/notes'

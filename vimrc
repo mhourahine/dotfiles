@@ -14,6 +14,10 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'heavenshell/vim-jsdoc', { 
+  \ 'for': ['javascript', 'javascript.jsx','typescript'], 
+  \ 'do': 'make install'
+\}
 Plug 'elzr/vim-json'
 call plug#end()
 
@@ -38,6 +42,8 @@ map <leader>t :ls<CR>:b<SPACE>
 map <leader>q :b#<bar>:bd#<CR>
 map <leader>f :GFiles<CR>
 map <leader>n :exe 'norm i##'.system("date")<CR>
+map <leader>y :w !pbcopy<CR><CR>
+nnoremap <leader>a ggVG
 nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
 nnoremap <C-Down> <C-d>
@@ -124,6 +130,7 @@ let g:ale_linters = {
 let g:ale_javascript_eslint_executable='npx eslint'
 
 let g:NERDSpaceDelims = 1
+let g:javascript_plugin_jsdoc = 1
 
 " Change cursor in edit mode when using iTerm.  Also deal with the case of
 " tmux
