@@ -48,7 +48,6 @@ nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
 nnoremap <C-Down> <C-d>
 nnoremap <C-Up> <C-u>
-inoremap jk <esc>
 
 set shiftwidth=2
 set tabstop=2
@@ -71,6 +70,7 @@ set statusline+=\ \ %f
 set statusline+=\ \ %y
 set statusline+=%=
 set statusline+=%3*\ Line:\ %l\/%L
+set statusline+=\ Col:\ %c
 
 " folding config tweaks
 set foldmethod=indent
@@ -83,13 +83,13 @@ set secure
 "make completion use only current file and ctags
 set complete=.,t  "
 
-"set mouse support properly when using tmux
+"set mouse support
 set mouse+=a
-if &term =~ '^screen'
-    " tmux knows the extended mouse mode
-    set ttymouse=xterm2
-endif
-
+if has("mouse_sgr")
+	set ttymouse=sgr
+else
+	set ttymouse=xterm2
+end
 
 if has("clipboard")
 	set clipboard=unnamed " copy to the system clipboard
