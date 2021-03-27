@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -10,8 +11,8 @@ Plug 'drewtempelmeyer/palenight.vim'
 Plug 'junegunn/goyo.vim'
 "syntax support
 Plug 'dense-analysis/ale'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'heavenshell/vim-jsdoc', { 
@@ -60,7 +61,7 @@ set relativenumber
 set rtp+=/usr/local/opt/fzf
 set tags=./tags,tags;
 set list
-set listchars=tab:\⎪\   
+	set listchars=tab:\⎪\ 
 set showmatch  "show matching bracket
 
 " statusline stuff
@@ -145,6 +146,12 @@ endif
 "**** COMMANDS ****
 "
 command Maketags !ag --hidden --ignore .git -g "" | ctags -R  --links=no -L -
-command Notes cd ~/Dropbox/notes | e today.md
+command Notes call OpenNotes()
 command Formatjson %!python -m json.tool
 
+function! OpenNotes()
+	set wrap
+	set linebreak
+	cd ~/Dropbox/notes
+	e today.md
+endfunction
