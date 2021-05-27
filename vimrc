@@ -150,6 +150,7 @@ endif
 command Maketags !ag --hidden --ignore .git -g "" | ctags -R  --links=no -L -
 command Notes call OpenNotes()
 command Formatjson %!python -m json.tool
+command! BufOnly silent! execute "%bd|e#|bd#"
 
 function! OpenNotes()
 	set wrap
