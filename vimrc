@@ -7,8 +7,10 @@ Plug 'tpope/vim-repeat'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'larsbs/vimterial_dark'
+Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'nanotech/jellybeans.vim'
 "syntax support
 Plug 'dense-analysis/ale'
 Plug 'yuezk/vim-js'
@@ -32,8 +34,9 @@ filetype plugin indent on
 "colorscheme adventurous
 "colorscheme dankneon
 set background=dark
-colorscheme palenight
+"colorscheme palenight
 "colorscheme default
+colorscheme jellybeans
 
 "let mapleader=";"
 map <leader>d :NERDTreeFind<CR>
