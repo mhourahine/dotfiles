@@ -83,3 +83,11 @@ export NVM_DIR="$HOME/.nvm"
 function pretty_csv {
     perl -pe 's/((?<=,)|(?<=^)),/ ,/g;' "$@" | column -t -s, | less -#2 -N -F -S -X -K
 }
+
+function code {
+	tmux split-window -h -c `pwd`
+	tmux split-window -h -c `pwd`
+	tmux select-layout main-horizontal
+	tmux resize-pane -D 25 
+	vim .
+}
