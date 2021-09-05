@@ -1,0 +1,60 @@
+{
+  "title": "Vaydeer Re-mapping",
+  "rules": [
+    {
+      "description": "Vaydeer 8 - copy, 9 - paste",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "8"
+          },
+          "to": [
+            {
+              "key_code": "c",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+					"conditions": [
+						{
+							"type": "device_if",
+							"identifiers": [
+								{
+									"vendor_id": 1155,
+									"product_id": 22354 
+								}
+							]
+						}
+					]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "9"
+          },
+          "to": [
+            {
+              "key_code": "v",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+					"conditions": [
+						{
+							"type": "device_if",
+							"identifiers": [
+								{
+									"vendor_id": 1155,
+									"product_id": 22354 
+								}
+							]
+						}
+					]
+        }
+      ]
+    }
+  ]
+}

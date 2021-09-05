@@ -29,6 +29,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=`npm config get prefix`/bin:$PATH
+export PATH=~/.mongodb/versions/mongodb-current/bin:$PATH
 
 # script to add ssh keys to ssh-agent
 #~/.ssh/addkeys.sh
@@ -88,6 +89,6 @@ function code {
 	tmux split-window -h -c `pwd`
 	tmux split-window -h -c `pwd`
 	tmux select-layout main-horizontal
-	tmux resize-pane -D 25 
+	tmux resize-pane -D 10 
 	vim .
 }
