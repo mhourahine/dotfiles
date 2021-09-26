@@ -11,6 +11,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'larsbs/vimterial_dark'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'nanotech/jellybeans.vim'
+Plug 'ruanyl/vim-gh-line'
 "syntax support
 Plug 'dense-analysis/ale'
 Plug 'yuezk/vim-js'
