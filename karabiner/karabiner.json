@@ -121,28 +121,7 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "pointing_button": "button4"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "s"
-                                }
-                            ]
-                        },
-                        {
-                            "from": {
-                                "pointing_button": "button5"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "w"
-                                }
-                            ]
-                        }
-                    ]
+                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [

@@ -1,3 +1,4 @@
 .DS_Store
-*.swp
+*.sw*
 vim/plugged/*
+karabiner/automatic_backups/*

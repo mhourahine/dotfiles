@@ -47,6 +47,8 @@ map <leader>q :b#<bar>:bd#<CR>
 map <leader>f :GFiles<CR>
 map <leader>n :exe 'norm i##'.system("date")<CR>
 map <leader>y :w !pbcopy<CR><CR>
+map <leader>s :Ag <C-r>0<CR>
+vnoremap <leader># y:Ag <C-R>=escape(@",'/\')<CR><CR>
 "paste without yanking
 vnoremap <leader>p "_dP
 nnoremap <leader>a ggVG
