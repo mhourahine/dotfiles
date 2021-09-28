@@ -1,22 +1,22 @@
 {
-  "title": "Vaydeer Re-mapping",
-  "rules": [
-    {
-      "description": "Vaydeer 8 - copy, 9 - paste",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "8"
-          },
-          "to": [
-            {
-              "key_code": "c",
-              "modifiers": [
-                "left_command"
-              ]
-            }
-          ],
+	"title": "Vaydeer Re-mapping",
+	"rules": [
+		{
+			"description": "Vaydeer 8 - copy, 9 - paste",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "8"
+					},
+					"to": [
+						{
+							"key_code": "c",
+							"modifiers": [
+								"left_command"
+							]
+						}
+					],
 					"conditions": [
 						{
 							"type": "device_if",
@@ -28,20 +28,20 @@
 							]
 						}
 					]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "9"
-          },
-          "to": [
-            {
-              "key_code": "v",
-              "modifiers": [
-                "left_command"
-              ]
-            }
-          ],
+				},
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "9"
+					},
+					"to": [
+						{
+							"key_code": "v",
+							"modifiers": [
+								"left_command"
+							]
+						}
+					],
 					"conditions": [
 						{
 							"type": "device_if",
@@ -53,8 +53,187 @@
 							]
 						}
 					]
-        }
-      ]
-    }
-  ]
+				}
+			]
+		},
+		{
+			"description": "Vaydeer 3 - Undo",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "3"
+					},
+					"to": [
+						{
+							"key_code": "z",
+							"modifiers": [
+								"left_command"
+							]
+						}
+					],
+					"conditions": [
+						{
+							"type": "device_if",
+							"identifiers": [
+								{
+									"vendor_id": 1155,
+									"product_id": 22354 
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "Vaydeer 6 - Alfred",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "6"
+					},
+					"to": [
+						{
+							"key_code": "spacebar",
+							"modifiers": [
+								"left_command"
+							]
+						}
+					],
+					"conditions": [
+						{
+							"type": "device_if",
+							"identifiers": [
+								{
+									"vendor_id": 1155,
+									"product_id": 22354 
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "Vaydeer 5 - Screenshot",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "5"
+					},
+					"to": [
+						{
+							"key_code": "5",
+							"modifiers": [
+								"left_command",
+								"left_shift"
+							]
+						}
+					],
+					"conditions": [
+						{
+							"type": "device_if",
+							"identifiers": [
+								{
+									"vendor_id": 1155,
+									"product_id": 22354 
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "Vaydeer 4 - Kap",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "2"
+					},
+					"to": [
+						{
+							"key_code": "0",
+							"modifiers": [
+								"left_command",
+								"left_shift"
+							]
+						}
+					],
+					"conditions": [
+						{
+							"type": "device_if",
+							"identifiers": [
+								{
+									"vendor_id": 1155,
+									"product_id": 22354 
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "Vaydeer 7 - Select All",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "7"
+					},
+					"to": [
+						{
+							"key_code": "a",
+							"modifiers": [
+								"left_command"
+							]
+						}
+					],
+					"conditions": [
+						{
+							"type": "device_if",
+							"identifiers": [
+								{
+									"vendor_id": 1155,
+									"product_id": 22354 
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": "Vaydeer 1 - KeePassXC",
+			"manipulators": [
+				{
+					"type": "basic",
+					"from": {
+						"key_code": "1"
+					},
+					"to": [
+						{
+							"shell_command": "open -a 'KeePassXc.app'"
+						}
+					],
+					"conditions": [
+						{
+							"type": "device_if",
+							"identifiers": [
+								{
+									"vendor_id": 1155,
+									"product_id": 22354 
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
 }
