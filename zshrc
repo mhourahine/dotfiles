@@ -22,7 +22,7 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include"
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_TMUX_AUTOSTART=true
-plugins=(git colorize colored-man-pages history osx npm meteor wd sudo z zsh_reload)
+plugins=(git colorize colored-man-pages history macos npm meteor wd sudo z)
 source $ZSH/oh-my-zsh.sh
 
 
