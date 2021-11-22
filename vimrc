@@ -23,6 +23,7 @@ Plug 'heavenshell/vim-jsdoc', {
   \ 'do': 'make install'
 \}
 Plug 'elzr/vim-json'
+Plug 'mogelbrod/vim-jsonpath'
 call plug#end()
 
 scriptencoding utf-8
