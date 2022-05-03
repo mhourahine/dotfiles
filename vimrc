@@ -46,7 +46,7 @@ map <leader>g :b#<CR>
 map <leader>b :Buffers<CR>
 map <leader>t :ls<CR>:b<SPACE>
 map <leader>q :b#<bar>:bd#<CR>
-map <leader>f :GFiles<CR>
+map <leader>f :Files<CR>
 map <leader>n :exe 'norm i##'.system("date")<CR>
 map <leader>y :w !pbcopy<CR><CR>
 map <leader>s :Ag <C-r>0<CR>
@@ -156,7 +156,7 @@ endif
 "
 command Maketags !ag --hidden --ignore .git -g "" | ctags -R  --links=no -L -
 command Notes call OpenNotes()
-command Formatjson %!python -m json.tool
+command Prettier %!prettier --use-tabs "%:p"
 command! BufOnly silent! execute "%bd|e#|bd#"
 
 function! OpenNotes()
