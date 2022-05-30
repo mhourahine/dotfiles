@@ -4,6 +4,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
@@ -157,7 +158,7 @@ endif
 command Maketags !ag --hidden --ignore .git -g "" | ctags -R  --links=no -L -
 command Notes call OpenNotes()
 command Prettier %!prettier --use-tabs "%:p"
-command! BufOnly silent! execute "%bd|e#|bd#"
+command Bd :up | %bd | e#
 
 function! OpenNotes()
 	set wrap
