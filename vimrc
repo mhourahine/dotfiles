@@ -15,6 +15,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'ruanyl/vim-gh-line'
 "syntax support
 Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim',  {'branch': 'master', 'do': 'yarn install'}
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mustache/vim-mustache-handlebars'
