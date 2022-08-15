@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-repeat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf.vim'
@@ -14,10 +15,8 @@ Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'nanotech/jellybeans.vim'
 Plug 'ruanyl/vim-gh-line'
 "syntax support
-Plug 'dense-analysis/ale'
-Plug 'neoclide/coc.nvim',  {'branch': 'master', 'do': 'yarn install'}
-Plug 'yuezk/vim-js'
-Plug 'maxmellon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'heavenshell/vim-jsdoc', { 
@@ -25,7 +24,7 @@ Plug 'heavenshell/vim-jsdoc', {
   \ 'do': 'make install'
 \}
 Plug 'elzr/vim-json'
-Plug 'mogelbrod/vim-jsonpath'
+Plug 'neoclide/coc.nvim',  {'branch': 'master', 'do': 'yarn install'}
 call plug#end()
 
 scriptencoding utf-8
@@ -74,8 +73,10 @@ set tags=./tags,tags;
 set list
 	set listchars=tab:\⎪\ 
 set showmatch  "show matching bracket
+set ignorecase
+set smartcase "search will be case sensitive when mixed case if found
 
-" statusline stuff
+"statusline stuff
 set laststatus=2
 set statusline=%{FugitiveStatusline()}
 set statusline+=\ \ %f
