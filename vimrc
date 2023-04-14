@@ -59,6 +59,9 @@ nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
 nnoremap <C-Down> <C-d>
 nnoremap <C-Up> <C-u>
+" Quickly insert an empty new line without entering insert mode
+nnoremap <Leader>o o<Esc>
+nnoremap <Leader>O O<Esc>
 
 set shiftwidth=2
 set tabstop=2
@@ -87,7 +90,8 @@ set statusline+=\ Col:\ %c
 
 " folding config tweaks
 set foldmethod=indent
-set foldlevelstart=99
+set foldlevelstart=3
+set foldnestmax=25
 
 " allow for project specific .vimrc files
 set exrc
