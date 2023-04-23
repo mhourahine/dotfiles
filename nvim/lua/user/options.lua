@@ -43,3 +43,14 @@ vim.opt.shortmess:append "c"
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
+
+-- Set .handlebars file type properly
+vim.cmd [[
+	" my filetype file
+	if exists("did_load_filetypes")
+		finish
+	endif
+	augroup filetypedetect
+		au! BufRead,BufNewFile *.handlebars setfiletype handlebars.css.html
+	augroup END
+]]
