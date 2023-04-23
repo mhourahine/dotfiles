@@ -59,6 +59,7 @@ ranger
 tree
 ctags
 wget
+ripgreg
 ```
 
 ## Nodes packages to global install

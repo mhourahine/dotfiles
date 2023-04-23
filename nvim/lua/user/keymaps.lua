@@ -17,8 +17,8 @@ vim.g.maplocalleader = "\\"
 --   command_mode = "c",
 
 -- Buffer nav
-keymap("n", "<leader>g", ":b#<cr>", opts)
-keymap("n", "<leader>d", ":Lex 30<cr>", opts)
+keymap("n", "<leader>b", ":b#<cr>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Selecting
 keymap("n", "<leader>y", ":w !pbcopy<cr><cr>", opts)
@@ -40,3 +40,7 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+--Telescope
+keymap("n", "<leader>f", ":Telescope find_files<cr>", opts)
+keymap("n", "<leader>g", ":Telescope live_grep<cr>", opts)
