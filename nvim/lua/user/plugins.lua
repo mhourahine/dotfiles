@@ -77,7 +77,18 @@ return packer.startup(function(use)
 	}
 
 	--nvim-tree
+	use "nvim-tree/nvim-web-devicons"
 	use "nvim-tree/nvim-tree.lua"
+
+	--Commenting
+	use "numToStr/Comment.nvim"
+	use "JoosepAlviste/nvim-ts-context-commentstring"
+
+	-- Autopairs
+	use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+
+	-- Git integration
+	use "lewis6991/gitsigns.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
