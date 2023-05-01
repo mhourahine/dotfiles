@@ -44,3 +44,4 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 --Telescope
 keymap("n", "<leader>f", ":Telescope find_files<cr>", opts)
 keymap("n", "<leader>g", ":Telescope live_grep<cr>", opts)
+keymap("n", "<leader>t", ":Telescope buffers<cr>", opts)

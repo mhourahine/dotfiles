@@ -38,6 +38,10 @@ vim.opt.scrolloff = 8                           -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 vim.opt.showmatch = true
+vim.opt.list = true
+vim.opt.listchars = { tab = "| " }  						-- show tab character
+vim.opt.foldmethod = "syntax"
+vim.opt.foldlevel = 3
 
 vim.opt.shortmess:append "c"
 
