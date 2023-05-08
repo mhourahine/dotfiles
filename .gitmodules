@@ -66,4 +66,8 @@
 	url = https://github.com/cakebaker/scss-syntax.vim
 [submodule "vim/bundle/palenight.vim"]
 	path = vim/bundle/palenight.vim
-	url = https://github.com/drewtempelmeyer/palenight.vim.git
+	url = https://github.com/drewtempelmeyer/palenight.vim.github
+[submodule "tmux/plugins/tpm"]
+	path = tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+

@@ -90,5 +90,6 @@ function code {
 	tmux split-window -h -c `pwd`
 	tmux select-layout main-horizontal
 	tmux resize-pane -D 10 
+	tmux renamew `basename "$PWD"`
 	nvim .
 }
