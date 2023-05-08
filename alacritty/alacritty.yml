@@ -222,7 +222,7 @@ font:
   #  text: CellBackground
   #  cursor: CellForeground
 
-  # Vi mode cursor colors
+  # Vi mode cursor color
   #
   # Colors for the cursor when the vi mode is active.
   #
