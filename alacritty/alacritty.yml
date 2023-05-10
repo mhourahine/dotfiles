@@ -44,3 +44,31 @@ font:
   bold_italic:
     style: Bold Italic
   size: 15.0
+
+# Key bindings for MacOS
+key_bindings:
+  - { key: K,              mods: Command, mode: ~Vi|~Search, chars: "\x0c"                 }
+  - { key: K,              mods: Command, mode: ~Vi|~Search, action: ClearHistory          }
+  - { key: Key0,           mods: Command,                    action: ResetFontSize         }
+  - { key: Equals,         mods: Command,                    action: IncreaseFontSize      }
+  - { key: Plus,           mods: Command,                    action: IncreaseFontSize      }
+  - { key: NumpadAdd,      mods: Command,                    action: IncreaseFontSize      }
+  - { key: Minus,          mods: Command,                    action: DecreaseFontSize      }
+  - { key: NumpadSubtract, mods: Command,                    action: DecreaseFontSize      }
+  - { key: V,              mods: Command,                    action: Paste                 }
+  - { key: C,              mods: Command,                    action: Copy                  }
+  - { key: C,              mods: Command, mode: Vi|~Search,  action: ClearSelection        }
+  - { key: H,              mods: Command,                    action: Hide                  }
+  - { key: H,              mods: Command|Alt,                action: HideOtherApplications }
+  - { key: M,              mods: Command,                    action: Minimize              }
+  - { key: Q,              mods: Command,                    action: Quit                  }
+  - { key: W,              mods: Command,                    action: Quit                  }
+  - { key: N,              mods: Command,                    action: CreateNewWindow       }
+  - { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
+  - { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
+  - { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
+  - { key: A,              mods: Control, chars: "\x1bOH",   mode: AppCursor               } # Home
+  - { key: E,              mods: Control, chars: "\x1bOF",   mode: AppCursor               } # End
+  - { key: K,              mods: Control, chars: "\x15",     mode: AppCursor               } # Delete line
+  - { key: Left,           mods: Alt,     chars: "\x1bb"                                   } # Skip word left
+  - { key: Right,          mods: Alt,     chars: "\x1bf"                                   } # Skip word right
