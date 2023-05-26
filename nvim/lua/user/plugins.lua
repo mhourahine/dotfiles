@@ -87,6 +87,9 @@ return packer.startup(function(use)
 	-- Autopairs
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 
+	-- Surround
+	use { 'echasnovski/mini.surround', branch = 'stable' }
+
 	-- Git integration
 	use("lewis6991/gitsigns.nvim")
 	use({

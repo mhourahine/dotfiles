@@ -47,6 +47,11 @@ alias ctags_js='ctags --options=$HOME/dotfiles/ctags-js -R .'
 alias md_to_rte='pandoc -f markdown_mmd -t rtf -s'
 alias agenda='gcalcli agenda'
 alias sptd='spotifyd --no-daemon'
+alias restart_karabiner='sudo killall -mv ".*[k|K]arabiner.*"'
+
+# force emacs key bindings
+bindkey -v
+bindkey "^K" kill-line
 
 # make up and down arrows use history-substring-search
 bindkey '^[[A' history-substring-search-up
