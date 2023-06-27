@@ -1,0 +1,43 @@
+{
+	"Target Rule": {
+		"prefix": ["rule-target"],
+		"body": [
+			"{",
+			"	\"type\": \"TargetCompletionRule\",",
+			"	\"targets\": [\n		$0	\n],",
+			"	\"targetGroups\": [\n		\n	],",
+			"	\"requiredAssessmentCount\": 1,",
+			"	\"acceptedLevels\": [\"2\", \"3\"]",
+			"}"
+		],
+		"description": "Target rule"
+	},
+	"Credit Rule": {
+		"prefix": ["rule-credit"],
+		"body": [
+			"{",
+			"	\"type\": \"CreditRule\",",
+			"	\"title\": \"${0:title}\",",
+			"	\"creditAvailable\": 1,",
+			"	\"allowPartial\": true,",
+			"	\"repeatable\": true,",
+			"	\"maxRepeat\": 10,",
+			"	\"creditCourse\": \"${0:title}\",",
+			"	\"rules\": [",
+			"	]",
+			"}"
+		],
+		"description": "Credit rule"
+	},
+	"Credit Rule Group": {
+		"prefix": ["rule-credit-group"],
+		"body": [
+			"{",
+			"	\"type\": \"CreditRuleGroup\",",
+			"	\"title\": \"${0:title}\",",
+			"	\"rules\": [",
+			"	]",
+			"}"
+		]
+	}
+}

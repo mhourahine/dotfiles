@@ -39,7 +39,8 @@ vim.opt.guifont = "monospace:h17"               -- the font used in graphical ne
 vim.opt.showmatch = true
 vim.opt.list = true
 vim.opt.listchars = { tab = "| " }  						-- show tab character
-vim.opt.foldmethod = "syntax"
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 3
 
 vim.opt.shortmess:append "c"
