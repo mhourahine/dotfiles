@@ -16,7 +16,7 @@ vim.g.maplocalleader = "\\"
 
 -- Buffer nav
 keymap("n", "<leader>b", ":b#<cr>", opts)
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>e", ":Neotree toggle current reveal_force_cwd<cr>", opts)
 
 -- Selecting
 keymap("n", "<leader>y", ":w !pbcopy<cr><cr>", opts)
