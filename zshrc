@@ -48,6 +48,7 @@ alias md_to_rte='pandoc -f markdown_mmd -t rtf -s'
 alias agenda='gcalcli agenda'
 alias sptd='spotifyd --no-daemon'
 alias restart_karabiner='sudo killall -mv ".*[k|K]arabiner.*"'
+alias notes='nvim ~/Dropbox/notes'
 
 # force emacs key bindings
 bindkey -v
