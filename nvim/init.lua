@@ -176,7 +176,13 @@ require('lazy').setup({
 
   {
     "kylechui/nvim-surround",
-    tags = "*"
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end
   },
 
   "mustache/vim-mustache-handlebars",
@@ -539,6 +545,14 @@ vim.keymap.set("n", "<leader>a", "ggVG", keymap_opts)
 -- Stay in indent mode
 vim.keymap.set("v", "<", "<gv", keymap_opts)
 vim.keymap.set("v", ">", ">gv", keymap_opts)
+
+
+-- Set .handlebars file type properly
+vim.cmd [[
+	augroup filetypedetect
+		au! BufRead,BufNewFile *.handlebars setfiletype handlebars.html
+	augroup END
+]]
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
