@@ -5,6 +5,7 @@ plug "zap-zsh/supercharge"
 plug "zap-zsh/zap-prompt"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-history-substring-search"
+plug "agkozak/zsh-z"
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
@@ -16,11 +17,8 @@ export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
 export LDFLAGS="-L/usr/local/opt/zlib/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include"
 
-#set up Z
-. /usr/local/etc/profile.d/z.sh
-
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:/opt/homebrew/bin:$PATH
 export PATH=`npm config get prefix`/bin:$PATH
 export PATH=~/.mongodb/versions/mongodb-current/bin:$PATH
 

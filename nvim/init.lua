@@ -85,20 +85,13 @@ require('lazy').setup({
       },
       on_attach = function(bufnr)
         vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk,
-        { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
+          { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
         vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
         vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
       end,
     },
   },
 
-  -- {
-  --   -- Theme inspired by Atom
-  --   'navarasu/onedark.nvim',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'onedark'
-  --   end,
   -- },
   {
     'folke/tokyonight.nvim',
@@ -114,10 +107,17 @@ require('lazy').setup({
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = false,
-        theme = 'onedark',
+        icons_enabled = true,
         component_separators = '|',
         section_separators = '',
+      },
+      sections = {
+        lualine_c = {
+          {
+            'filename',
+            path = 3,   -- show path
+          }
+        }
       },
     },
   },
@@ -185,7 +185,7 @@ require('lazy').setup({
     end
   },
 
-  "mustache/vim-mustache-handlebars",
+  -- "mustache/vim-mustache-handlebars",
 
 }, {})
 
@@ -247,7 +247,7 @@ vim.opt.foldlevel = 3
 vim.opt.showmatch = true
 vim.opt.number = true                           -- set numbered lines
 vim.opt.relativenumber = true                   -- set relative numbered lines
-vim.opt.scrolloff = 8                           -- is one of my fav
+vim.opt.scrolloff = 8
 
 -- [[ Basic Keymaps ]]
 
@@ -311,7 +311,7 @@ require('nvim-treesitter.configs').setup {
   ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-  auto_install = false,
+  auto_install = true,
 
   highlight = { enable = true },
   indent = { enable = true },
@@ -434,8 +434,8 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
+  tsserver = {},
+  html = { filetypes = { 'html', 'twig', 'hbs', 'handlebars'} },
 
   lua_ls = {
     Lua = {
@@ -549,9 +549,9 @@ vim.keymap.set("v", ">", ">gv", keymap_opts)
 
 -- Set .handlebars file type properly
 vim.cmd [[
-	augroup filetypedetect
-		au! BufRead,BufNewFile *.handlebars setfiletype handlebars.html
-	augroup END
+  augroup filetypedetect
+  au! BufRead,BufNewFile *.handlebars setfiletype handlebars.html
+  augroup END
 ]]
 
 -- The line beneath this is called `modeline`. See `:help modeline`
