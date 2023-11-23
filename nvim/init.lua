@@ -535,7 +535,7 @@ local keymap_opts = { noremap = true, silent = true }
 
 -- Buffer nav
 vim.keymap.set("n", "<leader>b", ":b#<cr>", keymap_opts)
-vim.keymap.set("n", "<leader>d", ":Neotree toggle<cr>", keymap_opts)
+vim.keymap.set("n", "<leader>d", ":Neotree reveal<cr>", keymap_opts)
 
 -- Selecting
 vim.keymap.set("n", "<leader>y", ":w !pbcopy<cr><cr>", keymap_opts)

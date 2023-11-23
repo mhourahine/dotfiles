@@ -7,6 +7,17 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "zsh-users/zsh-history-substring-search"
 plug "agkozak/zsh-z"
 
+# force emacs key bindings
+bindkey -v
+bindkey "^K" kill-line
+
+# make up and down arrows use history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+bindkey "^[^[[D" backward-word 
+bindkey "^[^[[C" forward-word
+
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export LC_CTYPE="en_US.UTF-8"
@@ -49,17 +60,8 @@ alias md_to_rte='pandoc -f markdown_mmd -t rtf -s'
 alias agenda='gcalcli agenda'
 alias sptd='spotifyd --no-daemon'
 alias notes='nvim ~/Dropbox/notes'
+alias history='history 1'
 
-# force emacs key bindings
-bindkey -v
-bindkey "^K" kill-line
-
-# make up and down arrows use history-substring-search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-
-bindkey "^[^[[D" backward-word 
-bindkey "^[^[[C" forward-word
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/mike/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/mike/google-cloud-sdk/path.zsh.inc'; fi
@@ -81,4 +83,14 @@ function code {
 	tmux resize-pane -D 10 
 	tmux renamew `basename "$PWD"`
 	nvim .
+}
+
+export DEV_IP=44.202.108.121
+function devtunnel {
+	echo "Starting webapp tunnel..."
+	ssh -i ~/.ssh/mike-aws-dev.pem ubuntu@$DEV_IP -f -N -L 3000:localhost:3000 
+	echo "Starting mongod tunnel..."
+	ssh -i ./.ssh/mike-aws-dev.pem ubuntu@$DEV_IP -f -N -L 3001:localhost:3001 
+	echo "Starting maildev tunnel..."
+	ssh -i ./.ssh/mike-aws-dev.pem ubuntu@$DEV_IP -f -N -L 1080:localhost:1080
 }
