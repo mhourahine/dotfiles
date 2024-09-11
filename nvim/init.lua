@@ -29,6 +29,8 @@ vim.opt.rtp:prepend(lazypath)
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
+  'mustache/vim-mustache-handlebars',
+  'mogelbrod/vim-jsonpath',
 
   -- Git related plugins
   'tpope/vim-fugitive',
@@ -122,17 +124,6 @@ require('lazy').setup({
     },
   },
 
-  {
-    -- Add indentation guides even on blank lines
-    'lukas-reineke/indent-blankline.nvim',
-    -- Enable `lukas-reineke/indent-blankline.nvim`
-    -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
-  },
-
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim',         opts = {} },
 
@@ -185,7 +176,6 @@ require('lazy').setup({
     end
   },
 
-  -- "mustache/vim-mustache-handlebars",
 
 }, {})
 
@@ -358,15 +348,15 @@ require('nvim-treesitter.configs').setup {
         ['[]'] = '@class.outer',
       },
     },
-    swap = {
-      enable = true,
-      swap_next = {
-        ['<leader>a'] = '@parameter.inner',
-      },
-      swap_previous = {
-        ['<leader>A'] = '@parameter.inner',
-      },
-    },
+    -- swap = {
+    --   enable = true,
+    --   swap_next = {
+    --     ['<leader>a'] = '@parameter.inner',
+    --   },
+    --   swap_previous = {
+    --     ['<leader>A'] = '@parameter.inner',
+    --   },
+    -- },
   },
 }
 
@@ -434,8 +424,8 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  tsserver = {},
-  html = { filetypes = { 'html', 'twig', 'hbs', 'handlebars'} },
+  ts_ls = {},
+  html = { filetypes = { 'html' } },
 
   lua_ls = {
     Lua = {
@@ -474,6 +464,7 @@ mason_lspconfig.setup_handlers {
 -- See `:help cmp`
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
+require('luasnip.loaders.from_lua').load({ paths = { '~/.config/nvim/LuaSnip/' } })
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 
@@ -536,6 +527,7 @@ local keymap_opts = { noremap = true, silent = true }
 -- Buffer nav
 vim.keymap.set("n", "<leader>b", ":b#<cr>", keymap_opts)
 vim.keymap.set("n", "<leader>d", ":Neotree reveal<cr>", keymap_opts)
+vim.keymap.set("n", "<leader>q", ":bn<bar>bd#<cr>", keymap_opts) --close current buffer and switch to next one
 
 -- Selecting
 vim.keymap.set("n", "<leader>y", ":w !pbcopy<cr><cr>", keymap_opts)
@@ -546,6 +538,8 @@ vim.keymap.set("n", "<leader>a", "ggVG", keymap_opts)
 vim.keymap.set("v", "<", "<gv", keymap_opts)
 vim.keymap.set("v", ">", ">gv", keymap_opts)
 
+-- vnoremap <leader>p "_dP
+vim.keymap.set("v", "<leader>p", "\"_dP", keymap_opts)
 
 -- Set .handlebars file type properly
 vim.cmd [[
