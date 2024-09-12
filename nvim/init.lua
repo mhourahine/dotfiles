@@ -36,7 +36,7 @@ require('lazy').setup({
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
-  -- NOTE: This is where your plugins related to LSP can be installed.
+    -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
     -- LSP Configuration & Plugins
@@ -68,6 +68,23 @@ require('lazy').setup({
 
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
+    },
+  },
+
+  -- Copilot
+  {
+    'zbirenbaum/copilot-cmp',
+    event = 'InsertEnter',
+    config = function () require('copilot_cmp').setup() end,
+    dependencies = {
+      'zbirenbaum/copilot.lua',
+      cmd = 'Copilot',
+      config = function()
+        require('copilot').setup({
+          suggestion = { enabled = false },
+          panel = { enabled = false },
+        })
+      end,
     },
   },
 
@@ -504,10 +521,13 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = {
+    -- Copilot Source
+    { name = 'copilot' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   },
 }
+
 
 -- additional set for Neotree
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
