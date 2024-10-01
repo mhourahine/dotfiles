@@ -34,4 +34,16 @@ return {
 		{ trig = '{{el' },
 		{ t('{{else}}') }
   ),
+	-- each block
+  s(
+    { trig = '{{each' },
+		fmt(
+			[[
+				{{#each <>}}
+				{{/each}}
+			]],
+			{ i(1) },
+			{ delimiters = '<>' }
+		)
+  ),
 }
