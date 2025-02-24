@@ -46,4 +46,16 @@ return {
 			{ delimiters = '<>' }
 		)
   ),
+	-- inline partial block
+  s(
+    { trig = '{{inline' },
+		fmt(
+			[[
+				{{#*inline "<>"}}
+				{{/inline}}
+			]],
+			{ i(1) },
+			{ delimiters = '<>' }
+		)
+  ),
 }
