@@ -8,15 +8,11 @@ plug "zsh-users/zsh-history-substring-search"
 plug "agkozak/zsh-z"
 
 # force emacs key bindings
-bindkey -v
-bindkey "^K" kill-line
+bindkey -e
 
 # make up and down arrows use history-substring-search
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-
-bindkey "^[^[[D" backward-word 
-bindkey "^[^[[C" forward-word
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
