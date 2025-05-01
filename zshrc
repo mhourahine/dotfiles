@@ -83,10 +83,24 @@ function code {
 
 export DEV_IP=44.202.108.121
 function devtunnel {
-	echo "Starting webapp tunnel..."
-	ssh -i ~/.ssh/mike-aws-dev.pem ubuntu@$DEV_IP -f -N -L 3000:localhost:3000 
-	echo "Starting mongod tunnel..."
-	ssh -i ./.ssh/mike-aws-dev.pem ubuntu@$DEV_IP -f -N -L 3001:localhost:3001 
-	echo "Starting maildev tunnel..."
-	ssh -i ./.ssh/mike-aws-dev.pem ubuntu@$DEV_IP -f -N -L 1080:localhost:1080
+	# Rename the current window to 'tunnels'
+	tmux rename-window "tunnels"
+
+	# Start in current pane: webapp tunnel
+	tmux send-keys "echo 'Starting webapp tunnel...'" C-m
+	tmux send-keys "ssh -i ~/.ssh/mike-aws-dev.pem ubuntu@$DEV_IP -N -L 3000:localhost:3000" C-m
+
+	# Split horizontally for mongod tunnel
+	tmux split-window -h
+	tmux send-keys "echo 'Starting mongod tunnel...'" C-m
+	tmux send-keys "ssh -i ~/.ssh/mike-aws-dev.pem ubuntu@$DEV_IP -N -L 3001:localhost:3001" C-m
+
+	# Move to the left pane and split vertically for maildev tunnel
+	tmux select-pane -L
+	tmux split-window -v
+	tmux send-keys "echo 'Starting maildev tunnel...'" C-m
+	tmux send-keys "ssh -i ~/.ssh/mike-aws-dev.pem ubuntu@$DEV_IP -N -L 1080:localhost:1080" C-m
+
+	# Arrange the layout nicely
+	tmux select-layout tiled
 }
