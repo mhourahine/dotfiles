@@ -81,7 +81,7 @@ function code {
 	nvim .
 }
 
-export DEV_IP=44.202.108.121
+export DEV_IP=3.85.32.98
 function devtunnel {
 	# Rename the current window to 'tunnels'
 	tmux rename-window "tunnels"

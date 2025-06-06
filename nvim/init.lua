@@ -207,6 +207,7 @@ require('lazy').setup({
     end
   },
 
+  'mechatroner/rainbow_csv'
 
 }, {})
 
@@ -330,7 +331,9 @@ vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { de
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
   ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
-
+  disable = function(lang, bufnr)
+    return lang == "csv"
+  end,
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = true,
 
@@ -582,5 +585,14 @@ vim.cmd [[
   augroup END
 ]]
 
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+-- Turn off treesitter for csvs to let rainbow_csv do its magic
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "csv",
+  callback = function()
+    -- Disable Tree-sitter highlighting for CSV
+    vim.treesitter.stop()
+
+    -- Disable line wrapping
+    vim.opt_local.wrap = false
+  end,
+})
