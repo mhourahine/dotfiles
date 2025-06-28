@@ -72,6 +72,13 @@ function pretty_csv {
     perl -pe 's/((?<=,)|(?<=^)),/ ,/g;' "$@" | column -t -s, | less -#2 -N -F -S -X -K
 }
 
+function setmongopw {
+	echo -n "MongoDB Password: "
+	read -s MONGO_PWD
+	export MONGO_PWD
+	echo
+}
+
 function code {
 	tmux split-window -h -c `pwd`
 	tmux split-window -h -c `pwd`
@@ -83,23 +90,25 @@ function code {
 
 export DEV_IP=3.85.32.98
 function devtunnel {
+  local ip="${1:-$DEV_IP}"
+
 	# Rename the current window to 'tunnels'
 	tmux rename-window "tunnels"
 
 	# Start in current pane: webapp tunnel
 	tmux send-keys "echo 'Starting webapp tunnel...'" C-m
-	tmux send-keys "ssh -i ~/.ssh/mike-aws-dev.pem ubuntu@$DEV_IP -N -L 3000:localhost:3000" C-m
+	tmux send-keys "ssh -i ~/.ssh/mike-aws-dev.pem ubuntu@$ip -N -L 3000:localhost:3000" C-m
 
 	# Split horizontally for mongod tunnel
 	tmux split-window -h
 	tmux send-keys "echo 'Starting mongod tunnel...'" C-m
-	tmux send-keys "ssh -i ~/.ssh/mike-aws-dev.pem ubuntu@$DEV_IP -N -L 3001:localhost:3001" C-m
+	tmux send-keys "ssh -i ~/.ssh/mike-aws-dev.pem ubuntu@$ip -N -L 3001:localhost:3001" C-m
 
 	# Move to the left pane and split vertically for maildev tunnel
 	tmux select-pane -L
 	tmux split-window -v
 	tmux send-keys "echo 'Starting maildev tunnel...'" C-m
-	tmux send-keys "ssh -i ~/.ssh/mike-aws-dev.pem ubuntu@$DEV_IP -N -L 1080:localhost:1080" C-m
+	tmux send-keys "ssh -i ~/.ssh/mike-aws-dev.pem ubuntu@$ip -N -L 1080:localhost:1080" C-m
 
 	# Arrange the layout nicely
 	tmux select-layout tiled

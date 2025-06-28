@@ -71,36 +71,21 @@ require('lazy').setup({
     },
   },
 
-  -- Copilot
-  -- {
-  --   'zbirenbaum/copilot-cmp',
-  --   event = 'InsertEnter',
-  --   config = function () require('copilot_cmp').setup() end,
-  --   dependencies = {
-  --     'zbirenbaum/copilot.lua',
-  --     cmd = 'Copilot',
-  --     config = function()
-  --       require('copilot').setup({
-  --         suggestion = { enabled = false },
-  --         panel = { enabled = false },
-  --       })
-  --     end,
-  --   },
-  -- },
-  -- {
-  --   "CopilotC-Nvim/CopilotChat.nvim",
-  --   branch = "canary",
-  --   dependencies = {
-  --     { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-  --     { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
-  --   },
-  --   build = "make tiktoken", -- Only on MacOS or Linux
-  --   opts = {
-  --     debug = false, -- Enable debugging
-  --     -- See Configuration section for rest
-  --   },
-  --   -- See Commands section for default commands if you want to lazy load on them
-  -- },
+	-- Copilot
+	{ 'github/copilot.vim' },
+	{
+		"CopilotC-Nvim/CopilotChat.nvim",
+		dependencies = {
+			{ "github/copilot.vim" }, -- or zbirenbaum/copilot.lua
+			{ "nvim-lua/plenary.nvim", branch = "master" }, -- for curl, log and async functions
+		},
+		build = "make tiktoken", -- Only on MacOS or Linux
+		opts = {
+			-- See Configuration section for options
+		},
+		-- See Commands section for default commands if you want to lazy load on them
+	},
+	{ "zbirenbaum/copilot-cmp", config = true },
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim',          opts = {} },
@@ -270,6 +255,8 @@ vim.opt.showmatch = true
 vim.opt.number = true                           -- set numbered lines
 vim.opt.relativenumber = true                   -- set relative numbered lines
 vim.opt.scrolloff = 8
+
+vim.opt.splitright = true                  -- split right
 
 -- [[ Basic Keymaps ]]
 
@@ -545,7 +532,6 @@ cmp.setup {
   },
 }
 
-
 -- additional set for Neotree
 vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
@@ -596,3 +582,17 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.wrap = false
   end,
 })
+
+
+source = vim.fn.stdpath('config') .. '/lua/copilot_cmp.lua'
+
+--Copilot setup
+require("copilot_cmp").setup()
+
+vim.g.copilot_no_tab_map = true
+vim.api.nvim_set_keymap("i", "<M-Tab>", 'copilot#Accept("<CR>")', {
+  expr = true,
+  silent = true,
+  noremap = true
+})
+
