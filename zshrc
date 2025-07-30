@@ -36,11 +36,11 @@ else
 
 	alias notes='mvim ~/Dropbox/notes'
 	alias restart_karabiner='sudo killall -mv ".*[k|K]arabiner.*"'
-
-	export NVM_DIR="$HOME/.nvm"
-	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
+
+# for n node package manager
+export N_PREFIX="$HOME/.n"
+export PATH="$N_PREFIX/bin:$PATH"
 
 alias ls="ls -F"
 alias du="du -h"

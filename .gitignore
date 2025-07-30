@@ -3,3 +3,4 @@
 vim/plugged/*
 karabiner/automatic_backups/*
 tmux/plugins/*
+nvim/lazy-lock.json
