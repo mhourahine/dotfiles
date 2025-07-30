@@ -68,6 +68,16 @@ if [ -f '/Users/mike/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/mike
 # source any customizations you don't want in the dotfiles repo
 source ~/.local/zshrc.local
 
+# convenience function to exit yazi and cd to the directory it was run in
+function y {
+  local cwd_file=$(mktemp)
+  yazi --cwd-file="$cwd_file" "$@"
+  if [[ -f "$cwd_file" && -s "$cwd_file" ]]; then
+    cd "$(cat "$cwd_file")"
+  fi
+  rm -f "$cwd_file"
+}
+
 function pretty_csv {
     perl -pe 's/((?<=,)|(?<=^)),/ ,/g;' "$@" | column -t -s, | less -#2 -N -F -S -X -K
 }

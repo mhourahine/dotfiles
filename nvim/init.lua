@@ -22,6 +22,32 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Enable the following language servers
+--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
+--
+--  Add any additional override configuration in the following tables. They will be passed to
+--  the `settings` field of the server config. You must look up that documentation yourself.
+--
+--  If you want to override the default filetypes that your language server will attach to you can
+--  define the property 'filetypes' to the map in question.
+local servers = {
+  -- clangd = {},
+  -- gopls = {},
+  -- pyright = {},
+  -- rust_analyzer = {},
+  ts_ls = {},
+  html = { filetypes = { 'html' } },
+
+  lua_ls = {
+    Lua = {
+      workspace = { checkThirdParty = false },
+      telemetry = { enable = false },
+    },
+  },
+}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
 --
@@ -29,7 +55,6 @@ vim.opt.rtp:prepend(lazypath)
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
-  'mustache/vim-mustache-handlebars',
   'mogelbrod/vim-jsonpath',
 
   -- Git related plugins
@@ -44,7 +69,27 @@ require('lazy').setup({
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
       { 'williamboman/mason.nvim', config = true },
-      'williamboman/mason-lspconfig.nvim',
+			{
+				'williamboman/mason-lspconfig.nvim',
+				config = function()
+					local mason_lspconfig = require 'mason-lspconfig'
+
+					mason_lspconfig.setup {
+						ensure_installed = vim.tbl_keys(servers),
+					}
+
+					-- mason_lspconfig.setup_handlers {
+					-- 	function(server_name)
+					-- 		require('lspconfig')[server_name].setup {
+					-- 			capabilities = capabilities,
+					-- 			on_attach = on_attach,
+					-- 			settings = servers[server_name],
+					-- 			filetypes = (servers[server_name] or {}).filetypes,
+					-- 		}
+					-- 	end
+					-- }
+				end
+			},
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -192,7 +237,18 @@ require('lazy').setup({
     end
   },
 
-  'mechatroner/rainbow_csv'
+  'mechatroner/rainbow_csv',
+
+	{
+		'kopecmaciej/vi-mongo.nvim',
+		config = function()
+			require('vi-mongo').setup()
+		end,
+		cmd = { 'ViMongo' },
+		keys = {
+			{ '<leader>vm', '<cmd>ViMongo<cr>', desc = 'ViMongo' }
+		}
+	}
 
 }, {})
 
@@ -432,54 +488,10 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 end
 
--- Enable the following language servers
---  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
---
---  Add any additional override configuration in the following tables. They will be passed to
---  the `settings` field of the server config. You must look up that documentation yourself.
---
---  If you want to override the default filetypes that your language server will attach to you can
---  define the property 'filetypes' to the map in question.
-local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  ts_ls = {},
-  html = { filetypes = { 'html' } },
-
-  lua_ls = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
-  },
-}
 
 -- Setup neovim lua configuration
 require('neodev').setup()
 
--- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
-
--- Ensure the servers above are installed
-local mason_lspconfig = require 'mason-lspconfig'
-
-mason_lspconfig.setup {
-  ensure_installed = vim.tbl_keys(servers),
-}
-
-mason_lspconfig.setup_handlers {
-  function(server_name)
-    require('lspconfig')[server_name].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = servers[server_name],
-      filetypes = (servers[server_name] or {}).filetypes,
-    }
-  end
-}
 
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
@@ -488,6 +500,8 @@ local luasnip = require 'luasnip'
 require('luasnip.loaders.from_lua').load({ paths = { '~/.config/nvim/LuaSnip/' } })
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
+
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 cmp.setup {
   snippet = {
@@ -564,13 +578,6 @@ vim.keymap.set("v", ">", ">gv", keymap_opts)
 -- vnoremap <leader>p "_dP
 vim.keymap.set("v", "<leader>p", "\"_dP", keymap_opts)
 
--- Set .handlebars file type properly
-vim.cmd [[
-  augroup filetypedetect
-  au! BufRead,BufNewFile *.handlebars setfiletype handlebars.html
-  augroup END
-]]
-
 -- Turn off treesitter for csvs to let rainbow_csv do its magic
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "csv",
@@ -596,3 +603,10 @@ vim.api.nvim_set_keymap("i", "<M-Tab>", 'copilot#Accept("<CR>")', {
   noremap = true
 })
 
+-- Handlebars stuff
+vim.filetype.add({
+  extension = {
+    handlebars = 'html',
+    hbs = 'html',
+  },
+})
